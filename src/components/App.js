@@ -1,5 +1,7 @@
 import React from "react";
 import "../stylesheets/App.css";
+import "../stylesheets/PokeList.css";
+import "../stylesheets/App.css";
 import getDataFromApi from "./Api";
 import PokeList from "./PokeList";
 
@@ -20,6 +22,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <h1>Mi lista de Pokemon</h1>
         <PokeList pokemons={this.state.pokemons} />
       </div>
     );

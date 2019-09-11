@@ -1,27 +1,14 @@
 import React from "react";
+import Pokemon from "./Item";
 
-const renderList =(pokemons)=>{
-return pokemons.map((pokemon, index) => {
-    return <Item key={} club={club} />;
+const renderList = pokemons => {
+  return pokemons.map(pokemon => {
+    return <Pokemon key={pokemon.id} name={pokemon.name} types={pokemon.types} evolution={pokemon.evolution} url={pokemon.url} />;
   });
 };
 
-// const renderTypes = types => {
-//   return types.map((type, index) => {
-//     return <h4 key={index}>{type}</h4>;
-//   });
-// };
-
 const PokeList = props => {
-  return (
-    <ul>
-      <li>
-        <h2>{props.name}</h2>
-        <img className="img" src={props.src} alt={props.name} />
-        {/* {renderTypes(props.types)} */}
-      </li>
-    </ul>
-  );
+  return <ul className="pokelist">{renderList(props.pokemons)}</ul>;
 };
 
 export default PokeList;
