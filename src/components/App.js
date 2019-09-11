@@ -1,19 +1,29 @@
 import React from "react";
 import "../stylesheets/App.css";
+import getDataFromApi from "./Api";
+import PokeList from "./PokeList";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      pokemons: []
+    };
+
+    getDataFromApi().then(pokemons => {
+      debugger;
+      this.setState({ pokemons });
+      console.log(this.state);
+    });
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <PokeList pokemons={this.state.pokemons} />
+      </div>
+    );
+  }
 }
 
 export default App;
