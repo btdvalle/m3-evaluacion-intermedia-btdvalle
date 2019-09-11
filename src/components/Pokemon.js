@@ -8,7 +8,7 @@ const renderTypes = types => {
 
 const Pokemon = props => {
   return (
-    <li>
+    <li className="">
       <h2>{props.name}</h2>
       <h3>{props.evolution}</h3>
       <img className="img" src={props.url} alt={props.name} />

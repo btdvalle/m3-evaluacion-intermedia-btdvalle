@@ -22,7 +22,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h1>Mi lista de Pokemon</h1>
+        <h1 className="h1">Mi lista de Pokemon</h1>
         <PokeList pokemons={this.state.pokemons} />
       </div>
     );

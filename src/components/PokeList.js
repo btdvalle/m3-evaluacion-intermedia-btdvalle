@@ -1,5 +1,5 @@
 import React from "react";
-import Pokemon from "./Item";
+import Pokemon from "./Pokemon";
 
 const renderList = pokemons => {
   return pokemons.map(pokemon => {
