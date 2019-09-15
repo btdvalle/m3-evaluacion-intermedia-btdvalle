@@ -12,10 +12,21 @@
   list-style: none;
 }
 
+.name {
+  margin-bottom: 0;
+}
+
 .types {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
   list-style: none;
   padding: 0;
+}
+
+.type {
+  background: gray;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 15px;
 }

@@ -4,7 +4,11 @@ import "../stylesheets/PokeList.css";
 
 const renderList = pokemons => {
   return pokemons.map(pokemon => {
-    return <Pokemon key={pokemon.id} name={pokemon.name} types={pokemon.types} evolution={pokemon.evolution} url={pokemon.url} />;
+    return (
+      <li>
+        <Pokemon key={pokemon.id} name={pokemon.name} types={pokemon.types} evolution={pokemon.evolution} url={pokemon.url} />
+      </li>
+    );
   });
 };
 
