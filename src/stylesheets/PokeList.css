@@ -3,6 +3,6 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
-  height: 80vh;
   align-content: center;
+  list-style: none;
 }

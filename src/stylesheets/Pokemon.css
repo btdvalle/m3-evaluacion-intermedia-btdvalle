@@ -1,0 +1,21 @@
+.pokemon {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: 130px;
+  height: 210px;
+  margin: 15px;
+  padding: 20px;
+  border-radius: 25px;
+  border: solid rgb(18, 94, 56) 2px;
+  background: rgb(222, 238, 243);
+  list-style: none;
+}
+
+.types {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+}
