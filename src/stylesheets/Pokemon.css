@@ -2,8 +2,7 @@
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  width: 130px;
-  height: 210px;
+  width: 150px;
   margin: 15px;
   padding: 20px;
   border-radius: 25px;
@@ -22,11 +21,12 @@
   align-items: center;
   list-style: none;
   padding: 0;
+  color: white;
 }
 
 .type {
   background: gray;
-  padding: 5px;
+  padding: 7px;
   margin: 5px;
   border-radius: 15px;
 }

@@ -17,12 +17,12 @@ const firstToUpperCase = string => {
 
 const Pokemon = props => {
   return (
-    <div className="pokemon">
+    <React.Fragment>
       <h2 className="name">{firstToUpperCase(props.name)}</h2>
       {/* <h3>{firstToUpperCase(props.evolution)}</h3> */}
       <img className="img" src={props.url} alt={props.name} title={props.name} />
       <ul className="types">{renderTypes(props.types)}</ul>
-    </div>
+    </React.Fragment>
   );
 };
 
