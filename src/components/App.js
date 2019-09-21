@@ -1,6 +1,6 @@
 import React from "react";
 import "../stylesheets/App.css";
-import getDataFromApi from "../Api";
+import getDataFromApi from "./services/Api";
 import PokeList from "./PokeList";
 
 class App extends React.Component {
