@@ -3,6 +3,7 @@
   flex-flow: column nowrap;
   align-items: center;
   width: 150px;
+  height: 230px;
   margin: 15px;
   padding: 20px;
   border-radius: 25px;
@@ -29,4 +30,8 @@
   padding: 7px;
   margin: 5px;
   border-radius: 15px;
+}
+
+.favorite {
+  background: rgb(52, 236, 236);
 }

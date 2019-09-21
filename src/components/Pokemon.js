@@ -16,13 +16,17 @@ const firstToUpperCase = string => {
 };
 
 const Pokemon = props => {
+  const { name, favorite, url, types, id } = props.pokemon;
+  const handleClick = () => {
+    props.action(id);
+  };
+  console.log(favorite);
   return (
-    <React.Fragment>
-      <h2 className="name">{firstToUpperCase(props.name)}</h2>
-      {/* <h3>{firstToUpperCase(props.evolution)}</h3> */}
-      <img className="img" src={props.url} alt={props.name} title={props.name} />
-      <ul className="types">{renderTypes(props.types)}</ul>
-    </React.Fragment>
+    <div className={`pokemon ${favorite ? "favorite" : ""}`} onClick={handleClick}>
+      <h2 className="name">{firstToUpperCase(name)}</h2>
+      <img className="img" src={url} alt={name} title={name} />
+      <ul className="types">{renderTypes(types)}</ul>
+    </div>
   );
 };
 

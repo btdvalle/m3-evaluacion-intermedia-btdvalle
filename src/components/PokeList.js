@@ -2,18 +2,19 @@ import React from "react";
 import Pokemon from "./Pokemon";
 import "../stylesheets/PokeList.css";
 
-const renderList = pokemons => {
+const renderList = props => {
+  const { pokemons, action } = props;
   return pokemons.map(pokemon => {
     return (
-      <li className="pokemon">
-        <Pokemon key={pokemon.id} name={pokemon.name} types={pokemon.types} evolution={pokemon.evolution} url={pokemon.url} />
+      <li key={pokemon.id}>
+        <Pokemon pokemon={pokemon} action={action} />
       </li>
     );
   });
 };
 
 const PokeList = props => {
-  return <ul className="pokelist">{renderList(props.pokemons)}</ul>;
+  return <ul className="pokelist">{renderList(props)}</ul>;
 };
 
 export default PokeList;

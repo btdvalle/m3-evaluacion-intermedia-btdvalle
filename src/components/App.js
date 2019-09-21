@@ -8,28 +8,34 @@ class App extends React.Component {
     super();
     this.state = {
       pokemons: []
-      // favorites: []
     };
+    this.handleFav = this.handleFav.bind(this);
+  }
 
-    getDataFromApi().then(pokemons => {
-      this.setState({ pokemons });
-      console.log(this.state);
+  componentDidMount() {
+    getDataFromApi()
+      .then(pokemons => this.formatData(pokemons))
+      .then(pokemons => {
+        this.setState({ pokemons });
+      });
+  }
+
+  formatData(pokemons) {
+    return pokemons.map(pokemon => {
+      return { ...pokemon, favorite: false };
     });
   }
 
-  //quiero añadirle una propiedad al estado de cada pokemon si son favoritos: false o true para poder usar el toogle, donde y como la añado en el estado de pokemon ???¿¿¿
-
-  // toggle() {
-  //   this.setState(prevState => ({
-  //     open: !prevState.open
-  //   }));
-  // }
+  handleFav(id) {
+    const pokemons = this.state.pokemons.map(pokemon => ({ ...pokemon, favorite: pokemon.id === id ? !pokemon.favorite : pokemon.favorite }));
+    this.setState({ pokemons });
+  }
 
   render() {
     return (
       <div className="App">
         <h1 className="h1">Mi lista de Pokemon</h1>
-        <PokeList pokemons={this.state.pokemons} />
+        <PokeList pokemons={this.state.pokemons} action={this.handleFav} />
       </div>
     );
   }
