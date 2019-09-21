@@ -7,9 +7,11 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      pokemons: []
+      pokemons: [],
+      fav: []
     };
     this.handleFav = this.handleFav.bind(this);
+    this.getFavArray = this.getFavArray.bind(this);
   }
 
   componentDidMount() {
@@ -28,7 +30,11 @@ class App extends React.Component {
 
   handleFav(id) {
     const pokemons = this.state.pokemons.map(pokemon => ({ ...pokemon, favorite: pokemon.id === id ? !pokemon.favorite : pokemon.favorite }));
-    this.setState({ pokemons });
+    this.setState({ pokemons }, this.getFavArray);
+  }
+  getFavArray() {
+    const fav = this.state.pokemons.filter(pokemon => pokemon.favorite);
+    this.setState({ fav });
   }
 
   render() {

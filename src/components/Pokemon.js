@@ -20,7 +20,6 @@ const Pokemon = props => {
   const handleClick = () => {
     props.action(id);
   };
-  console.log(favorite);
   return (
     <div className={`pokemon ${favorite ? "favorite" : ""}`} onClick={handleClick}>
       <h2 className="name">{firstToUpperCase(name)}</h2>
